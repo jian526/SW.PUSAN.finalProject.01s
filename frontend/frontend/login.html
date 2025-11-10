@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/static/css/login.css" />
+        <title>Argos. 무인점포 이상행동 감지 AI시스템</title>
+  </head>
+  <body>
+    <div class="login">
+      <div class="div">
+        <img class="logo" src="/static/images/logo.png" />
+        <div class="argos">Argos가 <br />지켜드릴게요</div>
+        
+        <div class="group">
+          <!-- 아이디/비밀번호 찾기 -->
+          <a class="text-wrapper" href="#">아이디 / 비밀번호 찾기</a>
+
+          <!-- 아이디 -->
+        <div class="input-inner">
+          <div class="text-wrapper-2">
+            <input type="text" id="username" placeholder="아이디" style="all: unset; width: 100%;" />
+          </div>
+        </div>
+
+        <!-- 비밀번호 -->
+        <div class="input-inner-2">
+          <div class="text-wrapper-3">
+            <input type="password" id="password" placeholder="비밀번호" style="all: unset; width: 100%;" />
+          </div>
+          <img class="phosphor-icons-eye" src="/static/images/Eye.svg" />
+        </div>
+
+          <!-- 로그인 버튼 -->
+          <div>
+            <a href="/">
+              <div class="box">
+                <div class="rectangle" id="login-btn">로그인</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- 회원가입 -->
+        <div class="overlap-group-wrapper">
+          <a href="/signup" class="overlap-group">
+            <div class="text-wrapper-4">회원가입</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/static/js/login.js"></script>
+</html>

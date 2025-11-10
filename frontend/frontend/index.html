@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <title>Argos. 무인점포 이상행동 감지 AI시스템</title>
+
+    <style>
+      .call-modal {
+        width: 330px;
+        height: 300px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        background: #FAFBFF;
+        z-index: 1000;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+
+        .modal-box {
+        width: 330px;
+        height: 300px;
+        background: #FAFBFF;
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        }
+
+        .modal-text {
+        position: absolute;
+        top: 33px;
+        left: 15px;
+        width: 300px;
+        height: 161px;
+        text-align: center;
+        color: black;
+        font-size: 17px;
+        font-family: 'Noto Sans KR';
+        font-weight: 500;
+        line-height: 23px;
+        }
+
+        .btn {
+        width: 123px;
+        height: 35px;
+        border-radius: 4px;
+        position: absolute;
+        top: 219px;
+        font-size: 14px;
+        font-family: 'Noto Sans KR';
+        font-weight: 700;
+        line-height: 20px;
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        cursor: pointer;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .confirm-btn {
+        left: 28px;
+        background: #3256FE;
+        color: #FAFBFF;
+        height: 50px;
+        }
+
+        .cancel-btn {
+        left: 179px;
+        background: #EBEEFF;
+        color: #3256FE;
+        height: 50px;
+        }
+
+        .modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.4); /* 검은 반투명 */
+          backdrop-filter: blur(4px);           /* 흐림 효과 */
+          z-index: 998;
+        }
+
+
+        </style>
+  </head>
+  <body>
+    <div class="main-dashboard">
+      <div class="div">
+        <div class="group">
+          <div class="overlap-group">
+            <div class="rectangle"></div>
+            <div class="group-2">
+              <div class="group-3">
+                <a href="/alerts"><img class="phosphor-icons" src="/static/images/envelopesimple.svg" /></a>
+                <a href="/mypage"><img class="img" src="/static/images/usercircle.svg" /></a>
+              </div>
+              <img class="logo-s" src="/static/images/logo_s 1.png" />
+            </div>
+          </div>
+        </div>
+        <div class="group-4">
+          <div class="group-5">
+            <div class="text-wrapper">오늘&nbsp;&nbsp;알림</div>
+            <div class="overlap-group-2">
+              <div class="text-wrapper-2">건</div>
+              <div class="text-wrapper-3">3</div>
+            </div>
+          </div>
+          <div class="text-wrapper-4">‘점포명’ 점</div>
+        </div>
+        <div class="group-6">
+          <a href="/live">
+            <div class="overlap-group-wrapper">
+              <div class="overlap-group-3">
+                <img class="frame" src="/static/images/frame.svg" />
+                <div class="text-wrapper-5">실시간<br />화면</div>
+              </div>
+            </div>
+          </a>
+          <a href="#">
+            <div class="overlap-wrapper">
+              <div class="overlap-group-3">
+                <div class="text-wrapper-5">긴급<br />호출</div>
+                <img class="frame" src="/static/images/Frame02.svg" />
+              </div>
+            </div>
+          </a>
+          <a href="/videos/video">
+            <div class="div-wrapper">
+              <div class="overlap-group-3">
+                <img class="frame" src="/static/images/Frame03.svg" />
+                <div class="text-wrapper-5">기록<br />열람</div>
+              </div>
+            </div>
+          </a>
+          <div class="group-7">
+            <a href="/cctvs/cctv_edit">
+              <div class="overlap">
+                <div class="text-wrapper-5">CCTV<br />편집</div>
+                <img class="group-8" src="/static/images/Group 12.svg" />
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="group-9">
+          <div class="overlap-2">
+            <div class="group-10">
+              <div class="overlap-group-4"><div class="text-wrapper-6">MAIN</div></div>
+            </div>
+            <div class="group-11">
+              <a href="/video_alerts"><div class="overlap-3"><div class="text-wrapper-7">기록보기</div></div></a>
+            </div>
+            <div class="video-wrapper">
+              <img id="live-video" alt="실시간 CCTV1">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div id="modalOverlay" class="modal-overlay" style="display: none;"></div>
+      <div id="emergencyModal" class="call-modal" style="display: none;">
+        <div class="modal-box"></div>
+
+        <a href="tel:01012345678" id="confirmBtn" class="btn confirm-btn">확인</a>
+        <div class="btn cancel-btn" id="cancelBtn">취소</div>
+
+        <div class="modal-text">
+            🚨 출동을 요청하시겠습니까?<br><br>
+            출동 요청은 제휴된 보안업체에 즉시 <br>
+            전달되며, 등록된 비상 연락처<br>(010-1234-5678)로 전화를 연결합니다.<br><br>
+            확인 시, 즉시 전화가 연결됩니다.
+        </div>
+    </div>
+
+
+    </div>
+      
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("emergencyModal");
+        const overlay = document.getElementById("modalOverlay");
+        const emergencyBtn = document.querySelector('a[href="#"]');
+        const cancelBtn = document.getElementById("cancelBtn");
+
+        emergencyBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          modal.style.display = "flex";
+          overlay.style.display = "block"; 
+        });
+
+        cancelBtn.addEventListener("click", () => {
+          modal.style.display = "none";
+          overlay.style.display = "none"; 
+        });
+      });
+
+  const storeImg = document.getElementById("live-video");
+  const storeWs = new WebSocket("ws://127.0.0.1:8050/ws");
+
+  storeWs.onmessage = (event) => {
+  storeImg.src = "data:image/jpeg;base64," + event.data;
+   };
+
+   storeWs.onopen = () => console.log("✅ [index.html] WebSocket 연결됨");
+   storeWs.onclose = () => console.log("❌ [index.html] WebSocket 끊김");
+   </script>
+
+
+  </body>
+
+  
+</html>

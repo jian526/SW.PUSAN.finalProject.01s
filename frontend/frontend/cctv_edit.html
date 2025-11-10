@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/static/css/cctv_edit.css" />
+            <title>Argos. 무인점포 이상행동 감지 AI시스템</title>
+        
+
+    </head>
+    <body>
+  <div class="CCTV">
+    <div class="div">
+      <!-- 상단바 -->
+      <div class="group">
+        <a href="/"><img class="phosphor-icons" src="/static/images/CaretLeft.svg" /></a>
+        <div class="group-2">
+          <a href="/alerts"><img class="img" src="/static/images/EnvelopeSimple.svg" /></a> 
+          <a href="/mypage"><img class="phosphor-icons-2" src="/static/images/UserCircle.svg" /></a>
+        </div>
+      </div>
+
+      <!-- 연결된 CCTV 개수 -->
+      <div class="group-3">
+        <div class="group-4">
+          <div class="text-wrapper">연결된 CCTV</div>
+          <div class="overlap-group">
+            <div class="text-wrapper-2">개</div>
+            <div id="cctv-count" class="text-wrapper-3">0</div>
+          </div>
+        </div>
+        <div class="text-wrapper-4">CCTV 편집</div>
+      </div>
+
+      <!-- + 버튼 -->
+      <a href="/cctvs/add">
+        <img class="phosphor-icons-plus" src="/static/images/Plus.svg" />
+      </a>
+
+      <!-- ✅ JS로 CCTV 카드가 들어갈 자리 -->
+      <div id="cctv-container"></div>
+    </div>
+  </div>
+
+  <script src="/static/js/cctv_edit.js"></script>
+</body>
+
+
+</html>

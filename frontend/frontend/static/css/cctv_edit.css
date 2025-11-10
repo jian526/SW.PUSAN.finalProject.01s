@@ -1,0 +1,499 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+html,
+body {
+    margin: 0px;
+    height: 100%;
+    padding: 0;
+    background-color: #f9faff;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+    outline: 2px solid #4a90e2 !important;
+    outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+    text-decoration: none;
+}
+
+.CCTV {
+    background-color: #f9faff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.CCTV .div {
+    background-color: #f9faff;
+    width: 390px;
+    height: 935px;
+    position: relative;
+}
+
+.CCTV .group {
+    position: absolute;
+    width: 390px;
+    height: 65px;
+    top: 30px;
+    left: 0;
+    background-color: #fafbff;
+}
+
+.CCTV .phosphor-icons {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 11px;
+    left: 21px;
+}
+
+.CCTV .group-2 {
+    position: absolute;
+    width: 94px;
+    height: 42px;
+    top: 8px;
+    left: 269px;
+}
+
+.CCTV .img {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    top: 0;
+    left: 0;
+}
+
+.CCTV .phosphor-icons-2 {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 1px;
+    left: 54px;
+}
+
+.CCTV .group-3 {
+    position: absolute;
+    width: 170px;
+    height: 48px;
+    top: 103px;
+    left: 30px;
+}
+
+.CCTV .group-4 {
+    position: absolute;
+    width: 174px;
+    height: 22px;
+    top: 26px;
+    left: 0;
+}
+
+.CCTV .text-wrapper {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    font-family: "Noto Sans KR-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 25px;
+    letter-spacing: -2.50px;
+    line-height: 21px;
+    white-space: nowrap;
+}
+
+.CCTV .overlap-group {
+    position: absolute;
+    width: 43px;
+    height: 22px;
+    top: 0;
+    left: 125px;
+}
+
+.CCTV .text-wrapper-2 {
+    top: 1px;
+    left: 20px;
+    font-family: "Noto Sans KR-Bold", Helvetica;
+    font-weight: 700;
+    font-size: 25px;
+    letter-spacing: -2.50px;
+    position: absolute;
+    color: #000000;
+    line-height: 21px;
+    white-space: nowrap;
+}
+
+.CCTV .text-wrapper-3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "Noto Sans KR-Bold", Helvetica;
+    font-weight: 700;
+    color: #3256fe;
+    font-size: 35px;
+    letter-spacing: -3.50px;
+    line-height: 21px;
+    white-space: nowrap;
+}
+
+.CCTV .text-wrapper-4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "Noto Sans KR-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: -1.80px;
+    line-height: 21px;
+    white-space: nowrap;
+}
+
+.CCTV .phosphor-icons-plus {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 122px;
+    left: 328px;
+}
+
+#cctv-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 180px 20px 20px 20px;
+}
+
+.CCTV .overlap-wrapper {
+  position: relative;  /* ✅ 겹치지 않게 변경 */
+  width: 338px;
+  height: 175px;
+ 
+}
+
+
+.CCTV .overlap {
+    position: relative;
+    width: 338px;
+    height: 175px;
+    background-color: #eaeeff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px #ccd5ff;
+}
+
+.CCTV .xnix-line-more {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 12px;
+    left: 291px;
+}
+
+.CCTV .xnix-line-video {
+    position: absolute;
+    width: 74px;
+    height: 74px;
+    top: 86px;
+    left: 241px;
+}
+
+.CCTV .overlap-2 {
+    position: relative;
+    width: 46px;
+    height: 54px;
+    top: 12px;
+    left: 15px;
+}
+
+.CCTV .vector {
+    position: absolute;
+    width: 46px;
+    height: 54px;
+    top: 0;
+    left: 0;
+}
+
+.CCTV .overlap-group-2 {
+    position: relative;
+    width: 49px;
+    height: 57px;
+    top: -2px;
+    left: -2px;
+}
+
+.CCTV .vector-2 {
+    position: absolute;
+    width: 49px;
+    height: 44px;
+    top: -2px;
+    left: -2px;
+}
+
+.CCTV .vector-4{
+    position: absolute;
+    width: 49px;
+    height: 44px;
+    top: 0;
+    left: 0;
+}
+.CCTV .vector-3 {
+    position: absolute;
+    width: 33px;
+    height: 49px;
+    top: 8px;
+    left: 4px;
+}
+
+.CCTV .text-wrapper-5 {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-family: "Noto Sans KR-Bold", Helvetica;
+    font-weight: 700;
+    color: #3256fe;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: 21px;
+    white-space: nowrap;
+}
+
+.CCTV .text-wrapper-6 {
+    top: 46px;
+    left: 15px;
+    font-family: "Noto Sans KR-SemiBold", Helvetica;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0;
+    position: absolute;
+    color: #000000;
+    line-height: 21px;
+    white-space: nowrap;
+}
+
+.CCTV .text-wrapper-7 {
+    top: 98px;
+    left: 15px;
+    font-family: "Noto Sans KR-Regular", Helvetica;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0;
+    position: absolute;
+    color: #000000;
+    line-height: 21px;
+    white-space: nowrap;
+}
+
+.CCTV .text-wrapper-8 {
+    position: absolute;
+    top: 72px;
+    left: 15px;
+    font-family: "Noto Sans KR-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 21px;
+    white-space: nowrap;
+}
+
+.CCTV .overlap-group-wrapper {
+    position: absolute;
+    width: 336px;
+    height: 155px;
+    top: 391px;
+    left: 30px;
+}
+
+.CCTV .overlap-3 {
+    position: relative;
+    width: 330px;
+    height: 155px;
+    background-color: #eaeeff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px #ccd5ff;
+}
+
+.CCTV .xnix-line-camera {
+    position: absolute;
+    width: 74px;
+    height: 74px;
+    top: 66px;
+    left: 241px;
+}
+
+.CCTV .overlap-4 {
+    width: 40px;
+    height: 45px;
+    position: relative;
+    top: 15px;
+    left: 15px;
+}
+
+.CCTV .div-wrapper {
+    position: absolute;
+    width: 40px;
+    height: 45px;
+    top: 0;
+    left: 0;
+}
+
+.CCTV .overlap-group-3 {
+    position: relative;
+    width: 44px;
+    height: 48px;
+    top: -2px;
+    left: -2px;
+}
+
+.CCTV .vector-4 {
+    position: absolute;
+    width: 49px;
+    height: 44px;
+    top: 20px;
+    left: 14px;
+}
+
+.CCTV .vector-5 {
+    position: absolute;
+    width: 44px;
+    height: 48px;
+    top: 0;
+    left: 0;
+}
+
+.CCTV .text-wrapper-9 {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    font-family: "Noto Sans KR-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 21px;
+    white-space: nowrap;
+}
+
+.CCTV .text-wrapper-10 {
+    position: absolute;
+    top: 46px;
+    left: 15px;
+    font-family: "Noto Sans KR-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 21px;
+    white-space: nowrap;
+}
+
+.CCTV .group-5 {
+    position: absolute;
+    width: 336px;
+    height: 155px;
+    top: 571px;
+    left: 30px;
+}
+
+.CCTV .group-6 {
+    position: absolute;
+    width: 41px;
+    height: 40px;
+    top: 92px;
+    left: 249px;
+}
+
+.CCTV .group-7 {
+    position: absolute;
+    width: 336px;
+    height: 155px;
+    top: 751px;
+    left: 30px;
+}
+
+.CCTV .overlap-5 {
+    width: 43px;
+    height: 43px;
+    position: relative;
+    top: 15px;
+    left: 15px;
+}
+
+.CCTV .vector-6 {
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    top: 0;
+    left: 0;
+}
+
+.CCTV .vector-wrapper {
+    position: relative;
+    width: 47px;
+    height: 47px;
+    top: -2px;
+    left: -2px;
+    background-size: 100% 100%;
+}
+
+.CCTV .vector-7 {
+    position: absolute;
+    width: 46px;
+    height: 44px;
+    top: 1px;
+    left: 0;
+}
+
+.CCTV .img-wrapper {
+    position: relative;
+    width: 47px;
+    height: 47px;
+    top: -2px;
+    left: -2px;
+    background-size: 100% 100%;
+}
+
+.dropdown-wrapper {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 20;
+}
+
+
+.more-btn {
+  cursor: pointer;
+  padding-right: 10px;
+  
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  z-index: 10;
+  width: 100px;
+  text-align: center;
+  justify-self: center;
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 5px 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}

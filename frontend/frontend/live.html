@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/static/css/live.css" />
+        <title>Argos. 무인점포 이상행동 감지 AI시스템</title>
+    </head>
+    <body>
+        <div class="screen">
+            <div class="div">
+                <div class="group">
+                    <div class="overlap-group">
+                        <div class="rectangle"></div>
+                        <div class="group-2">
+                            <a href="/"><img class="phosphor-icons" src="/static/images/CaretLeft.svg" /></a>
+                            <div class="group-3">
+                                <a href="/alerts"><img class="img" src="/static/images/EnvelopeSimple.svg" /></a>
+                                <a href="/mypage"><img class="phosphor-icons-2" src="/static/images/UserCircle.svg" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group-4">
+                    <div class="group-5">
+                        <div class="text-wrapper">오늘&nbsp;&nbsp;알림</div>
+                        <div class="overlap-group-2">
+                            <div class="text-wrapper-2">건</div>
+                            <div class="text-wrapper-3">3</div>
+                        </div>
+                    </div>
+                    <div class="text-wrapper-4">실시간 화면</div>
+                </div>
+                <div class="overlap-wrapper">
+                    <div class="overlap">
+                        <div class="group-wrapper">
+                            <div class="group-6">
+                                <div class="text-wrapper-5">MAIN</div>
+                                <div class="text-wrapper-6">카메라 1</div>
+                            </div>
+                        </div>
+                        <div class="overlap-group-wrapper">
+                            <a href="/video_alerts"><div class="div-wrapper"><div class="text-wrapper-7">기록보기</div></div></a>
+                        </div>
+                        <div class="live-div">
+                           <img id="live-video1" class="live_video" alt="실시간 CCTV1">
+                        </div>
+                    </div>
+                </div>
+                <div class="group-7">
+                    <div class="overlap-2">
+                        <div class="group-8">
+                            <div class="overlap-group-3"><div class="text-wrapper-8">카메라 2</div></div>
+                        </div>
+                        <div class="overlap-group-wrapper">
+                            <a href="/video_alerts">
+                                <div class="div-wrapper"><div class="text-wrapper-7">기록보기</div></div>
+                            </a>
+                        </div>
+                        <div class="live-div">
+                            <img id="live-video2" class="live_video" alt="실시간 CCTV2">
+                        </div>
+                    </div>
+                </div>
+                <div class="group-9">
+                    <div class="overlap-3">
+                        <div class="group-8">
+                            <div class="overlap-group-3"><div class="text-wrapper-8">카메라 3</div></div>
+                        </div>
+                        <div class="overlap-group-wrapper">
+                            <a href="/video_alerts">
+                                <div class="div-wrapper"><div class="text-wrapper-7">기록보기</div></div>
+                            </a>
+                        </div>
+                        <div class="live-div">
+                            <video id="live-video3" class="live_video" alt="실시간 CCTV" src="/static/video/cctv3.mp4" autoplay loop muted></video>
+                        </div>
+                    </div>
+                </div>
+                <div class="group-10">
+                    <div class="overlap-4">
+                        <div class="group-8">
+                            <div class="overlap-group-3"><div class="text-wrapper-8">카메라 4</div></div>
+                        </div>
+                        <div class="overlap-group-wrapper">
+                            <a href="/video_alerts">
+                                <div class="div-wrapper"><div class="text-wrapper-7">기록보기</div></div>
+                            </a>
+                        </div>
+                        <div class="live-div">
+                            <video id="live-video4" class="live_video" alt="실시간 CCTV" src="/static/video/cctv4.mp4" autoplay muted loop></video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<script>
+        const storeImg1 = document.getElementById("live-video1");
+        const storeWs1 = new WebSocket("ws://127.0.0.1:8050/ws");
+
+        storeWs1.onmessage = (event) => {
+        storeImg1.src = "data:image/jpeg;base64," + event.data;
+        };
+
+        storeWs1.onopen = () => console.log("✅ [live.html] WebSocket 연결됨");
+        storeWs1.onclose = () => console.log("❌ [live.html] WebSocket 끊김");
+        </script>
+
+        <script>
+        const storeImg2 = document.getElementById("live-video2");
+        const storeWs2 = new WebSocket("ws://127.0.0.1:8051/ws");
+
+        storeWs2.onmessage = (event) => {
+        storeImg2.src = "data:image/jpeg;base64," + event.data;
+        };
+
+        storeWs2.onopen = () => console.log("✅ [live.html] WebSocket 연결됨");
+        storeWs2.onclose = () => console.log("❌ [live.html] WebSocket 끊김");
+        </script>
+    </body>
+</html>

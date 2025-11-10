@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <style>
+.alert-card {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.alert-box {
+  background-color: #ebeeff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  max-width: 330px;
+}
+
+.alert-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: #3256fe;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.alert-text {
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  word-break: keep-all;
+  white-space: normal;
+  margin: 0;
+}
+
+
+
+</style>
+        <link rel="stylesheet" href="/static/css/alerts.css" />
+    </head>
+    <body>
+        <div class="screen">
+            <div class="div" id="alert-list">
+                <div id="dynamic-alerts"></div> 
+                <!-- <div class="group">
+                    <div class="overlap-group">
+                        <div class="text-wrapper">이상행동 감지 알림</div>
+                        <p class="p">[2025-06-24 14:30] <br />&#39;도난 의심 행동&#39;이 감지되었습니다.</p>
+                    </div>
+                </div>
+                <div class="overlap-wrapper">
+                    <div class="overlap-group">
+                        <div class="text-wrapper">장비 상태 이상</div>
+                        <p class="p">[2025-06-19 19:35] <br />2번 카메라 영상 신호 없음</p>
+                    </div>
+                </div>
+                <div class="overlap-group-wrapper">
+                    <div class="overlap-group">
+                        <div class="text-wrapper">출동 처리 결과</div>
+                        <p class="p">[2025-06-11 15:05] <br />출동완료. 현장 확인 후 이상 없음.</p>
+                    </div>
+                </div>
+                <div class="div-wrapper">
+                    <div class="overlap-group">
+                        <p class="text-wrapper">[점검 안내] 6/11(화) 오전 2시~4시 시스템 점검</p>
+                        <p class="p">점검 중 출동요청 및 영상 확인이 <br />일시 중단될 수 있습니다.</p>
+                    </div>
+                </div>
+                <div class="group-2">
+                    <div class="overlap-group">
+                        <div class="text-wrapper">이상행동 감지 알림</div>
+                        <p class="p">[2025-06-09 01:49] <br />&#39;파손 의심 행동&#39;이 감지되었습니다.</p>
+                    </div>
+                </div>
+                <div class="group-3">
+                    <div class="overlap-group">
+                        <p class="text-wrapper">[업데이트] 실시간 알림 속도 개선</p>
+                        <p class="p">이상행동 감지 알림 전송 속도가 <br />평균 2초 빨라졌습니다.</p>
+                    </div>
+                </div>
+                <div class="group-4">
+                    <div class="overlap-group">
+                        <div class="text-wrapper">이상행동 감지 알림</div>
+                        <p class="p">[2025-06-02 13:35] <br />&#39;도난 의심 행동&#39;이 감지되었습니다.</p>
+                    </div>
+                </div> -->
+                <img class="phosphor-icons" id="back" src="./static/images/CaretLeft.svg" />
+            </div>
+        </div>
+    </body>
+    <script>
+        document.getElementById("back").addEventListener("click", () => {
+        history.back(); // 또는 window.history.back();
+        });
+
+    </script>
+
+    <script>
+document.getElementById("back").addEventListener("click", () => {
+  history.back();
+});
+
+async function loadAlerts() {
+  const res = await fetch("/alerts/list");
+  const alerts = await res.json();
+
+  console.log(alerts);
+
+  const container = document.getElementById("dynamic-alerts");
+  container.innerHTML = ""; // ✅ 정적 알림은 건들지 않음
+
+  alerts.forEach((alert) => {
+    const date = new Date(alert.detected_at);
+    const formattedTime = `[${date.getFullYear()}-${(date.getMonth() + 1)
+      .toString()
+      .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")} ${date
+      .toTimeString()
+      .slice(0, 5)}]`;
+
+    const card = document.createElement("div");
+    card.className = "alert-card"; // ✅ 새로운 class 이름
+
+    card.innerHTML = `
+    <div class="alert-box">
+        <div class="alert-title">이상행동 감지 알림</div>
+        <p class="alert-text">${formattedTime} <br />‘${alert.alert_type} 의심 행동’이 감지되었습니다.</p>
+    </div>
+    `;
+
+
+    container.prepend(card); // 최신순 정렬
+  });
+}
+
+
+document.addEventListener("DOMContentLoaded", loadAlerts);
+
+</script>
+
+</html>

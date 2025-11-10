@@ -1,0 +1,140 @@
+
+* {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+html,
+body {
+    margin: 0px;
+    height: 100%;
+    padding: 0;
+    background-color: #f9faff;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+    outline: 2px solid #4a90e2 !important;
+    outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+    text-decoration: none;
+}
+
+:root {
+    --label-colorlightprimary: rgba(0, 0, 0, 1);
+}
+
+.screen {
+    background-color: #f9faff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.screen .div {
+    background-color: #f9faff;
+    width: 330px;
+    height: 850px;
+    position: relative;
+    padding-top: 80px;
+    padding-left: 20px;
+}
+
+.screen .group {
+    top: 86px;
+    position: absolute;
+    width: 334px;
+    height: 90px;
+    left: 30px;
+}
+
+.screen .overlap-group {
+    position: relative;
+    width: 330px;
+    height: 90px;
+    background-color: #ebeeff;
+    border-radius: 4px;
+}
+
+.screen .text-wrapper {
+    top: 10px;
+    color: #3256fe;
+    white-space: nowrap;
+    position: absolute;
+    left: 13px;
+    font-family: "Noto Sans KR-Medium", Helvetica;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+
+.screen .p {
+    top: 33px;
+    color: #000000;
+    position: absolute;
+    left: 13px;
+    font-family: "Noto Sans KR-Medium", Helvetica;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+
+.screen .overlap-wrapper {
+    top: 196px;
+    position: absolute;
+    width: 334px;
+    height: 90px;
+    left: 30px;
+}
+
+.screen .overlap-group-wrapper {
+    top: 306px;
+    position: absolute;
+    width: 334px;
+    height: 90px;
+    left: 30px;
+}
+
+.screen .div-wrapper {
+    top: 416px;
+    position: absolute;
+    width: 334px;
+    height: 90px;
+    left: 30px;
+}
+
+.screen .group-2 {
+    top: 526px;
+    position: absolute;
+    width: 334px;
+    height: 90px;
+    left: 30px;
+}
+
+.screen .group-3 {
+    top: 636px;
+    position: absolute;
+    width: 334px;
+    height: 90px;
+    left: 30px;
+}
+
+.screen .group-4 {
+    top: 746px;
+    position: absolute;
+    width: 334px;
+    height: 90px;
+    left: 30px;
+}
+
+.screen .phosphor-icons {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 32px;
+    left: 21px;
+}
+
+

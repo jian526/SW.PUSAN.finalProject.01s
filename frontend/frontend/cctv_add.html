@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/static/css/cctv_add.css" />
+            <title>Argos. 무인점포 이상행동 감지 AI시스템</title>
+
+    </head>
+    <body>
+        <div class="CCTV">
+            <div class="div">
+                <div class="group">
+                    <a href="/cctvs/cctv_edit"><img class="phosphor-icons" src="/static/images/CaretLeft.svg" /></a>
+                    <div class="group-2">
+                        <a href="/alerts"><img class="img" src="/static/images/EnvelopeSimple.svg" /></a><a href="/mypage"><img class="phosphor-icons-2" src="/static/images/UserCircle.svg" /></a>
+                    </div>
+                </div>
+                <div class="group-3">
+                    <div class="group-4"><div class="text-wrapper">CCTV 연결하기</div></div>
+                    <div class="text-wrapper-2">CCTV 추가</div>
+                </div>
+               <div class="group-5">
+                    <div class="overlap-group-wrapper">
+                        <div class="overlap-group">
+                            <input type="text" id="name" name="name" placeholder="카메라 이름" class="text-input" />
+                        </div>
+                    </div>
+                    <div class="overlap-wrapper">
+                        <div class="overlap-group">
+                            <input type="text" id="model" name="model" placeholder="제조사 / 모델명" class="text-input" />
+                        </div>
+                    </div>
+                    <div class="div-wrapper">
+                        <div class="overlap-group">
+                            <input type="text" id="location" name="location" placeholder="메모" class="text-input" />
+                        </div>
+                    </div>
+                    <div class="group-6">
+                        <div class="overlap-group">
+                            <input type="text" id="rtsp_url" name="rtsp_url" placeholder="RTSP 주소 입력란" class="text-input" />
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="group-7">
+                        <button class="overlap" onclick="submitCCTV()"><div class="text-wrapper-4">연결</div></button>
+                    </div>
+
+            </div>
+        </div>
+    </body>
+    <script>
+function submitCCTV() {
+  const name = document.getElementById("name").value;
+  const model = document.getElementById("model").value;
+  const location = document.getElementById("location").value;
+  const rtsp_url = document.getElementById("rtsp_url").value;
+  const store_id = 1;  // 임시로 지정. 실제로는 로그인한 유저의 점포 ID 사용
+
+  fetch("/cctvs/add", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      name,
+      model,
+      location,
+      rtsp_url,
+      store_id,
+    })
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        alert("CCTV가 성공적으로 등록되었습니다!");
+        window.location.href = "/cctvs/cctv_edit";
+      } else {
+        alert("등록 실패");
+      }
+    });
+}
+</script>
+
+</html>

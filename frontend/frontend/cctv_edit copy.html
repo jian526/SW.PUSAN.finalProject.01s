@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/static/css/cctv_edit.css" />
+
+    </head>
+    <body>
+        <div class="CCTV">
+            <div class="div">
+                <div class="group">
+                    <a href="index.html"><img class="phosphor-icons" src="/static/images/CaretLeft.svg" /></a>
+                    <div class="group-2">
+                        <a href="alerts.html"><img class="img" src="./static/images/EnvelopeSimple.svg" /></a> 
+                        <a href="mypage.html"><img class="phosphor-icons-2" src="/static/images/UserCircle.svg" /></a>
+                    </div>
+                </div>
+                <div class="group-3">
+                    <div class="group-4">
+                        <div class="text-wrapper">연결된 CCTV</div>
+                        <div class="overlap-group">
+                            <div class="text-wrapper-2">개</div>
+                            <div class="text-wrapper-3">4</div>
+                        </div>
+                    </div>
+                    <div class="text-wrapper-4">CCTV 편집</div>
+                </div>
+                <a href="cctv_add.html">
+                <img class="phosphor-icons-plus" src="/static/images/Plus.svg" />
+                </a>
+                <div class="overlap-wrapper">
+                    <div class="overlap">
+                        <div class="xnix-line-video">
+                            <div class="overlap-2">
+                                <div class="vector">
+                                    <div class="overlap-group-2">
+                                        <img class="vector-2" src="/static/images/cctv1.svg" />
+                                    </div>
+                                </div>
+                                <!-- <div class="vector">
+                                    <div class="overlap-group-2">
+                                        <img class="vector-2" src="img/vector-19-2.svg" />
+                                        <img class="vector-3" src="img/vector-20-2.svg" />
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="text-wrapper-5">MAIN</div>
+                        <div class="text-wrapper-6">카메라 1</div>
+                        <div class="text-wrapper-7">중앙 카메라</div>
+                        <div class="text-wrapper-8">IPC3615ER3-ADUPF28M</div>
+                        <div class="dropdown-wrapper">
+                              <img class="more-btn" src="/static/images/Vector.svg" />
+                              <div class="dropdown-menu hidden">
+                              <button onclick="editCCTV(1)">수정</button>
+                              <button onclick="deleteCCTV(1)">삭제</button>
+                              <button onclick="setAsMain(1)">메인으로 지정</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="overlap-group-wrapper">
+                    <div class="overlap-3">
+                        <div class="xnix-line-camera">
+                            <div class="overlap-4">
+                                <div class="div-wrapper">
+                                    <div class="vector">
+                                        <div class="overlap-group-2">
+                                            <img class="vector-2" src="/static/images/cctv2.svg" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-wrapper-9">카메라 2</div>
+                        <div class="text-wrapper-8">후면 카메라</div>
+                        <div class="text-wrapper-10">EBD3674ER3-ERTGF56F</div>
+                        <div class="dropdown-wrapper">
+                              <img class="more-btn" src="/static/images/Vector.svg" />
+                              <div class="dropdown-menu hidden">
+                              <button onclick="editCCTV(1)">수정</button>
+                              <button onclick="deleteCCTV(1)">삭제</button>
+                              <button onclick="setAsMain(1)">메인으로 지정</button>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group-5">
+                    <div class="overlap-3">
+
+                        <img class="group-6" src="/static/images/Group 12.svg" />
+                        <div class="text-wrapper-9">카메라 3</div>
+                        <div class="text-wrapper-8">전면 카메라</div>
+                        <div class="text-wrapper-10">EBD3674ER3-ERTGF56F</div>
+                        <div class="dropdown-wrapper">
+                              <img class="more-btn" src="/static/images/Vector.svg" />
+                              <div class="dropdown-menu hidden">
+                              <button onclick="editCCTV(1)">수정</button>
+                              <button onclick="deleteCCTV(1)">삭제</button>
+                              <button onclick="setAsMain(1)">메인으로 지정</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group-7">
+                    <div class="overlap-3">
+                        <div class="xnix-line-camera">
+                            <div class="overlap-5">
+                                <div class="vector-6">
+                                    <div class="vector-wrapper"><img class="vector-7" src="/static/images/cctv4.svg" /></div>
+                                </div>
+                                <div class="vector-6">
+                                    <div class="img-wrapper"><img class="vector-7" src="/static/images/cctv4.svg" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-wrapper-9">카메라 4</div>
+                        <div class="text-wrapper-8">좌측 카메라</div>
+                        <div class="text-wrapper-10">EBD3674ER3-XEGSXS87</div>
+                        <div class="dropdown-wrapper">
+                              <img class="more-btn" src="/static/images/Vector.svg" />
+                              <div class="dropdown-menu hidden">
+                              <button onclick="editCCTV(1)">수정</button>
+                              <button onclick="deleteCCTV(1)">삭제</button>
+                              <button onclick="setAsMain(1)">메인으로 지정</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="/static/js/cctv_edit.js"></script>
+</html>
