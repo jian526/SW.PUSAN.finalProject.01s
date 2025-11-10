@@ -4,6 +4,10 @@
 
 <img width="841" height="1189" alt="Image" src="https://github.com/user-attachments/assets/efb770a7-7243-4964-a134-94eb5c6da085" />
 <br>
+<img width="385" height="583" alt="Image" src="https://github.com/user-attachments/assets/8ca5160a-6162-49d4-a562-dc5f516574ad" />
+<br>
+<img width="391" height="498" alt="Image" src="https://github.com/user-attachments/assets/6304b3d1-32fb-48fb-9ec7-90d66abe7fd8" />
+
 
 **기획안**<br>
 [01즈 무인점포 이상행동 감지 AI프로젝트 기획안](https://drive.google.com/file/d/1y0IQAK8lHpBxD2emSO1xmUaRyc90lEYN/view?usp=drive_link))
